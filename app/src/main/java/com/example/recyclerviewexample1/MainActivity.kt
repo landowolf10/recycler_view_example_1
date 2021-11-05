@@ -3,6 +3,7 @@ package com.example.recyclerviewexample1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewexample1.adapters.RecyclerAdapter
 import com.example.recyclerviewexample1.models.DataSource
@@ -19,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     {
         var dataSource = DataSource()
 
-        var recyclerView = findViewById<RecyclerView>(R.id.card_view)
-        recyclerView.layoutManager
+        var recyclerView: RecyclerView = findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = RecyclerAdapter(dataSource.getItemList())
 
         //var recyclerView = findViewById<RecyclerView>(R.id.card_view)
